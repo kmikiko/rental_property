@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2023_06_04_131420) do
     t.string "walking_minutes"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "property_id", null: false
+    t.integer "property_id"
     t.index ["property_id"], name: "index_nearest_stations_on_property_id"
   end
 

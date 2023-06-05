@@ -1,25 +1,20 @@
 class NearestStationsController < ApplicationController
   before_action :set_nearest_station, only: %i[ show edit update destroy ]
 
-  # GET /nearest_stations or /nearest_stations.json
   def index
     @nearest_stations = NearestStation.all
   end
 
-  # GET /nearest_stations/1 or /nearest_stations/1.json
   def show
   end
 
-  # GET /nearest_stations/new
   def new
     @nearest_station = NearestStation.new
   end
 
-  # GET /nearest_stations/1/edit
   def edit
   end
 
-  # POST /nearest_stations or /nearest_stations.json
   def create
     @nearest_station = NearestStation.new(nearest_station_params)
 
@@ -34,7 +29,6 @@ class NearestStationsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /nearest_stations/1 or /nearest_stations/1.json
   def update
     respond_to do |format|
       if @nearest_station.update(nearest_station_params)
@@ -47,7 +41,6 @@ class NearestStationsController < ApplicationController
     end
   end
 
-  # DELETE /nearest_stations/1 or /nearest_stations/1.json
   def destroy
     @nearest_station.destroy
     respond_to do |format|
@@ -57,12 +50,10 @@ class NearestStationsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
     def set_nearest_station
       @nearest_station = NearestStation.find(params[:id])
     end
 
-    # Only allow a list of trusted parameters through.
     def nearest_station_params
       params.fetch(:nearest_station, {})
     end
